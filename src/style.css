@@ -1,0 +1,113 @@
+.table {
+    position: relative; 
+    background-color: rgb(212, 202, 235);
+    max-width: 900px;
+    overflow-x:auto;
+    margin: 0 auto; 
+ }
+
+ .data-greedy{
+    position: relative; 
+    background-color: rgb(212, 202, 235);
+    max-width: 900px;
+    overflow-x:auto;
+    margin: 0 auto; 
+ }
+ .error {
+    color: rgba(255, 0, 0, 0.858);
+    text-align: left;
+    margin: auto;
+    font-size: 16px;
+    padding: 0px 1rem;
+}
+
+tr{
+    width: 100%;
+    white-space: nowrap;
+}
+
+td {
+    border: 1px;
+    padding: "10px";
+    text-align: center
+}
+
+my-custom-class{
+   display: inline-block;
+}
+.form{
+    background-color: white;
+    border-radius: 5px;
+    width: 550px;
+    margin: 20px auto;
+    padding: 20px;
+    /* height: 600px; */
+}
+
+.form-body{
+    padding: 20px 10px;
+}
+
+.form-body > *{
+    padding: 5px;
+}
+
+.form__label{
+    width: 40%;
+}
+
+.form_input{
+    width: 60%;
+}
+
+.footer{
+    text-align: center;
+}
+.Auth-form-title {
+
+    font-size: 38px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+}
+
+body{
+
+    width: 100%;
+    height: auto;
+
+}
+
+.bg-sign-in{
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.bg-devices{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-users{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+.full-screen {
+    position:absolute; 
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:0;
+}
+  
+.div-fit{
+    padding:300px;
+}
+ 
