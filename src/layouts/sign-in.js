@@ -14,7 +14,7 @@ const Login = () => {
   });
 
   useEffect(() => {
-    sessionStorage.setItem("ROLE", null);
+    sessionStorage.clear();
 }, []);
 
 

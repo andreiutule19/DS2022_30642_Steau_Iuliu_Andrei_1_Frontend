@@ -100,7 +100,7 @@ const DeviceList = () => {
         const value = event.target.value;
         setAddress(value);
 
-        if (value < 0) {
+        if (value.length < 0) {
             setError({
                 ...error, address: "Address is to short. Address should contain at least 3 characters"
             })

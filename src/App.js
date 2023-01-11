@@ -17,6 +17,7 @@ import {
   Routes as Switch,
 } from "react-router-dom";
 import PrivateRouteUser from './components/privateRoute/privateRouteUSER';
+import ChatRoom from './components/chat/ChatRoom';
 
 
 const darkTheme = createTheme({
@@ -42,11 +43,13 @@ function App() {
               <Route exact path="/users" element={<Users />} />
               <Route exact path="/data" element={<UserDevicesList />} />
               <Route exact path="/associate" element={<Associated />} />
+              <Route exact path="/chat" element={<ChatRoom />} />
             </Route>
             <Route exact path='/' element={<PrivateRouteUser />}>
               <Route exact path="/homeUser" element={<HomeUser />} />
               <Route exact path="/associated" element={<DataChart />} />
-              </Route>
+              <Route exact path="/chaty" element={<ChatRoom />} />
+            </Route>
           </Switch>
         </BrowserRouter>
 

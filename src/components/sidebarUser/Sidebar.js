@@ -66,8 +66,6 @@ const SidebarUser = () => {
   const [mess, setMess] = React.useState("");
 
 
-  // const exampleSocket = new WebSocket("wss://localhost:8080/api/websocket/topic/events");
-
   const Alert = React.forwardRef(function Alert(props, ref) {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
