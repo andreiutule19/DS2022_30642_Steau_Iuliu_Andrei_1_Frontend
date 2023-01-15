@@ -15,7 +15,7 @@ const ChatRoom = () => {
     })
 
     async function connect() {
-        let Sock = new SockJS('http://localhost:8080/api/websocket');
+        let Sock = new SockJS('https://localhost:8443/api/websocket');
         stompClient = Stomp.over(Sock);
         stompClient.connect({}, onConnected, onError);
     }

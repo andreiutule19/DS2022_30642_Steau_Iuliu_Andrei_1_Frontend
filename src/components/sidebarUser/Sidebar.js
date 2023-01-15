@@ -71,7 +71,7 @@ const SidebarUser = () => {
   });
 
   async function connect() {
-    var socket = new SockJS('http://localhost:8080/api/websocket');
+    var socket = new SockJS('https://localhost:8443/api/websocket');
     let stompClient = Stomp.over(socket);  
     stompClient.connect({}, function (frame) {
       stompClient.subscribe('/topic/events', function (messageOutput) {
