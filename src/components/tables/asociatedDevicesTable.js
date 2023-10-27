@@ -6,8 +6,10 @@ import { DataGrid } from '@mui/x-data-grid';
 import Button from '@mui/material/Button';
 import { Col, Row } from "react-bootstrap";
 import axiosInstance from "../axios/axios";
+import axiosLogin from "../axios/axiosLogin";
 import { useLocation } from 'react-router-dom';
 import Background from '../../images/bg-sign-in-basic.jpeg';
+
 
 const AssociatedDevicesList = () => {
     const infos = useLocation();
@@ -32,7 +34,7 @@ const AssociatedDevicesList = () => {
     });
 
     useEffect(() => {
-    axiosInstance.get("users/get/associated/" + email)
+    axiosLogin.get("users/get/associated/" + email)
         .then(res => {
             const val = res.data;
             setUserDevices(val);
@@ -48,7 +50,7 @@ const AssociatedDevicesList = () => {
     
     useEffect(() => {
     
-        axiosInstance.get("devices/nullUser")
+        axiosLogin.get("devices/nullUser")
             .then(res => {
                 const val = res.data;
                 setDevices(val);
@@ -140,7 +142,7 @@ const AssociatedDevicesList = () => {
 
                                     console.log(slicedDevice);
                                     if (slicedDevice.deviceId !== 0) {
-                                        axiosInstance.post("devices/delete/associate", slicedDevice)
+                                        axiosLogin.post("devices/delete/associate", slicedDevice)
                                             .then(
                                                 () => {
                                                     window.location.reload();
@@ -194,7 +196,7 @@ const AssociatedDevicesList = () => {
 
                                 onClick={() => {
                                     if (associateDevice.deviceId !== 0) {
-                                        axiosInstance.post("users/associate/" + email, associateDevice)
+                                        axiosLogin.post("users/associate/" + email, associateDevice)
                                             .then(
                                                 () => {
                                                     window.location.reload();

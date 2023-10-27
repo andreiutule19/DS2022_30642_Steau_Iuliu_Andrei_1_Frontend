@@ -13,7 +13,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Background from '../../images/bg-sign-in-basic.jpeg';
-
+import axiosLogin from "../axios/axiosLogin";
 //here we just edit delete and add new devices
 const DeviceList = () => {
     const [devices, setDevices] = useState([]);
@@ -38,7 +38,7 @@ const DeviceList = () => {
 
     useEffect(() => {
 
-        axiosInstance.get("devices")
+        axiosLogin.get("devices")
             .then(res => {
                 const val = res.data;
                 setDevices(val);
@@ -142,7 +142,7 @@ const DeviceList = () => {
 
 
         if (deviceId !== 0) {
-            axiosInstance.post("devices/update", newDevice)
+            axiosLogin.post("devices/update", newDevice)
                 .then(
                     res => {
                         window.location.reload();
@@ -173,7 +173,7 @@ const DeviceList = () => {
         }
 
 
-        axiosInstance.post("devices/insert", newAddDevice)
+        axiosLogin.post("devices/insert", newAddDevice)
             .then(
                 res => {
                     setDevices([...devices, res.data]);
@@ -272,7 +272,7 @@ const DeviceList = () => {
                         <Button
                             color="error"
                             onClick={() => {
-                                axiosInstance.post("devices/delete", editDevice)
+                                axiosLogin.post("devices/delete", editDevice)
                                     .then(
                                         () => {
 

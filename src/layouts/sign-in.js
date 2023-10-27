@@ -56,7 +56,8 @@ const Login = () => {
       axiosLogin.post("users/login", user).then((res) => {
         sessionStorage.setItem("EMAIL", user.email); 
         sessionStorage.setItem("NAME", res.data.fullName);
-        sessionStorage.setItem("ROLE",res.data.role); 
+        sessionStorage.setItem("ROLE", res.data.role); 
+        sessionStorage.setItem("TOKEN", res.data.token); 
         history.push("/home");
         window.location.reload();
       });

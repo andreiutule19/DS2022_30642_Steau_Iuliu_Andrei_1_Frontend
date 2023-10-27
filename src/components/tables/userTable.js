@@ -14,6 +14,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import axiosInstance from "../axios/axios";
 import Background from '../../images/bg-sign-in-basic.jpeg';
+import axiosLogin from "../axios/axiosLogin";
 
 const UserList = () => {
     const [users, setUsers] = useState([]);
@@ -135,7 +136,7 @@ const UserList = () => {
 
         }
         console.log(credentilas);
-        axiosInstance.post("users/update", credentilas)
+        axiosLogin.post("users/update", credentilas)
             .then(
                 res => {
                 
@@ -166,7 +167,7 @@ const UserList = () => {
 
         }
         console.log(credentilas);
-        axiosInstance.post("users/insert", credentilas)
+        axiosLogin.post("users/insert", credentilas)
             .then(
                 res => {
                     console.log(res);
@@ -190,7 +191,7 @@ const UserList = () => {
 
     useEffect(() => {
 
-        axiosInstance.get("users")
+        axiosLogin.get("users")
             .then(res => {
                 const val = res.data;
                 setUsers(val);
@@ -275,7 +276,7 @@ const UserList = () => {
                                 color="error"
                                 onClick={() => {
                                     console.log(userDeleted);
-                                    axiosInstance.post("users/delete", userDeleted)
+                                    axiosLogin.post("users/delete", userDeleted)
                                         .then(
                                             () => {
                                                 setUsers(users.filter(user => {

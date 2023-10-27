@@ -11,8 +11,9 @@ import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import TextField from '@mui/material/TextField';
-import axiosLogin from "../axios/axiosLogin";
 import Background from '../../images/bg-sign-in-basic.jpeg';
+import axiosLogin from "../axios/axiosLogin";
+
 const UserDevicesList = () => {
 
 
@@ -43,7 +44,7 @@ const UserDevicesList = () => {
 
 
     useEffect(() => {
-        axiosInstance.get("users/get/associated/" + sessionStorage.getItem("EMAIL"))
+        axiosLogin.get("users/get/associated/" + sessionStorage.getItem("EMAIL"))
             .then(res => {
                 const val = res.data;
                 setUserDevices(val);

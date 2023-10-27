@@ -4,8 +4,7 @@ const axiosInstance = axios.create({
     baseURL: "https://localhost:8443/",
     headers: {
             "Content-Type": "application/json",
-            Authorization:'Bearer ' + localStorage.getItem("token")
-          
+            "Authorization": "Bearer " + sessionStorage.getItem("TOKEN")  
         
     }
 });

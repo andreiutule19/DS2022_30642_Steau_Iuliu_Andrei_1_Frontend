@@ -70,25 +70,25 @@ const SidebarUser = () => {
     return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
   });
 
-  async function connect() {
-    var socket = new SockJS('https://localhost:8443/api/websocket');
-    let stompClient = Stomp.over(socket);  
-    stompClient.connect({}, function (frame) {
-      stompClient.subscribe('/topic/events', function (messageOutput) {
-        const msg = JSON.parse(messageOutput.body);
-        if (msg.email === sessionStorage.getItem("EMAIL")) {
-          setMess(msg.fullName+", the max energy for device with ID "+msg.deviceId+" has been EXCEDEED with "+msg.overflow)
-          setOpen(true);
-        }
-        console.log(msg.fullName)
+  // async function connect() {
+  //   var socket = new SockJS('https://localhost:8443/api/websocket');
+  //   let stompClient = Stomp.over(socket);  
+  //   stompClient.connect({}, function (frame) {
+  //     stompClient.subscribe('/topic/events', function (messageOutput) {
+  //       const msg = JSON.parse(messageOutput.body);
+  //       if (msg.email === sessionStorage.getItem("EMAIL")) {
+  //         setMess(msg.fullName+", the max energy for device with ID "+msg.deviceId+" has been EXCEDEED with "+msg.overflow)
+  //         setOpen(true);
+  //       }
+  //       console.log(msg.fullName)
           
-        });
-    });
-  }
+  //       });
+  //   });
+  // }
   
-  useEffect(() => {
-    connect();
-  },[])
+  // useEffect(() => {
+  //   connect();
+  // },[])
  
 
   const handleClose = (event, reason) => {
